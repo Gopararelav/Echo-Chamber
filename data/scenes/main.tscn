@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnwbv26l4bkhr"]
+[gd_scene load_steps=3 format=3 uid="uid://dnwbv26l4bkhr"]
 
 [ext_resource type="PackedScene" uid="uid://b0n68sk8pq8l8" path="res://data/objects/character.tscn" id="1_guhq5"]
+[ext_resource type="PackedScene" uid="uid://br0ck63g2o363" path="res://data/objects/wall.tscn" id="2_iirej"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_guhq5")]
 position = Vector2(427, 212)
+motion_mode = 1
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(277, 69)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(278, 243)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(236, 84)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(224, 124)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(223, 164)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(230, 205)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_iirej")]
+position = Vector2(238, 244)
+
+[node name="Camera2D" type="Camera2D" parent="."]

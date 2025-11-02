@@ -13,10 +13,12 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("Echo"):
-		for i in range(1, 9):
-			var Ball: Area2D = BallPack.instantiate()
-			var rotate_in_deg = 45 * i
-			print(rotate_in_deg, ": ", i)
-			Ball.position = Vector2(position.x + cos(deg_to_rad(rotate_in_deg)) * 10, position.y + sin(deg_to_rad(rotate_in_deg)) * 10)
+		var line = Line2D.new()
+		
+		for i in range(1, 91):
+			var Ball: CharacterBody2D = BallPack.instantiate()
+			var rotate_in_deg = 4 * i
+			Ball.position = Vector2(position.x + cos(deg_to_rad(rotate_in_deg)) * 35, position.y + sin(deg_to_rad(rotate_in_deg)) * 35)
 			Ball.rotation = deg_to_rad(rotate_in_deg)
+			line.add_point(Ball.position)
 			$"../".add_child(Ball)

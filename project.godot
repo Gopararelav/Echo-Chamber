@@ -49,6 +49,13 @@ Echo={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="стены"
+2d_physics/layer_2="игрок"
+2d_physics/layer_3="враги"
+2d_physics/layer_4="эхо"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
