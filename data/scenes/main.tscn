@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnwbv26l4bkhr"]
+[gd_scene load_steps=5 format=4 uid="uid://dnwbv26l4bkhr"]
 
 [ext_resource type="PackedScene" uid="uid://b0n68sk8pq8l8" path="res://data/objects/character.tscn" id="1_guhq5"]
-[ext_resource type="PackedScene" uid="uid://br0ck63g2o363" path="res://data/objects/wall.tscn" id="2_iirej"]
+[ext_resource type="Texture2D" uid="uid://5ht5or6to2wl" path="res://data/images/wall.png" id="2_iirej"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkjo2"]
+texture = ExtResource("2_iirej")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -24, 32, -24, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_yeeyf"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dkjo2")
 
 [node name="Main" type="Node2D"]
 
@@ -9,25 +20,8 @@
 position = Vector2(427, 212)
 motion_mode = 1
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(277, 69)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(278, 243)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(236, 84)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(224, 124)
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(223, 164)
-
-[node name="StaticBody2D6" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(230, 205)
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("2_iirej")]
-position = Vector2(238, 244)
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_yeeyf")

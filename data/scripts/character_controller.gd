@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 		for i in range(1, 91):
 			var Ball: CharacterBody2D = BallPack.instantiate()
 			var rotate_in_deg = 4 * i
-			Ball.position = Vector2(position.x + cos(deg_to_rad(rotate_in_deg)) * 35, position.y + sin(deg_to_rad(rotate_in_deg)) * 35)
+			Ball.position = Vector2(position.x + cos(deg_to_rad(rotate_in_deg)) * 25, position.y + sin(deg_to_rad(rotate_in_deg)) * 25)
 			Ball.rotation = deg_to_rad(rotate_in_deg)
 			line.add_point(Ball.position)
 			$"../".add_child(Ball)

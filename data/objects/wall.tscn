@@ -1,17 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://br0ck63g2o363"]
+[gd_scene load_steps=4 format=3 uid="uid://br0ck63g2o363"]
+
+[ext_resource type="Material" uid="uid://cv6ha702y3dkm" path="res://data/shaders/blink.tres" id="1_eh52x"]
+[ext_resource type="Texture2D" uid="uid://5ht5or6to2wl" path="res://data/images/wall.png" id="1_nbjus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0463"]
-size = Vector2(38, 39)
+size = Vector2(38, 38)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_h0463")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+[node name="Wall" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("1_eh52x")
+position = Vector2(0, -1)
+scale = Vector2(0.60351557, 0.60351557)
+texture = ExtResource("1_nbjus")

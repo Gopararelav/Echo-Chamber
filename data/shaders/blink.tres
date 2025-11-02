@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cv6ha702y3dkm"]
+
+[ext_resource type="Shader" uid="uid://jkgvq4vldemj" path="res://data/shaders/blink.gdshader" id="1_8km8g"]
+
+[resource]
+shader = ExtResource("1_8km8g")
