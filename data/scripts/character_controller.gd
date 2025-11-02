@@ -8,13 +8,15 @@ func _physics_process(_delta: float) -> void:
 	if direction:
 		velocity = direction.normalized() * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
+		velocity = Vector2(move_toward(velocity.x, 0, SPEED), move_toward(velocity.y, 0, SPEED))
+
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("Echo"):
-		var Ball: Area2D = BallPack.instantiate()
-		Ball.look_at(get_local_mouse_position())
-		Ball.position = position
-		$"../".add_child(Ball)
+		for i in range(1, 9):
+			var Ball: Area2D = BallPack.instantiate()
+			var rotate_in_deg = 45 * i
+			print(rotate_in_deg, ": ", i)
+			Ball.position = Vector2(position.x + cos(deg_to_rad(rotate_in_deg)) * 10, position.y + sin(deg_to_rad(rotate_in_deg)) * 10)
+			Ball.rotation = deg_to_rad(rotate_in_deg)
+			$"../".add_child(Ball)
